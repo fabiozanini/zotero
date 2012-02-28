@@ -430,12 +430,15 @@ var Zotero_Browser = new function() {
 			Zotero_Browser.statusImage.src = captureIcon;
 			Zotero_Browser.statusImage.tooltipText = tab.getCaptureTooltip();
 			Zotero_Browser.statusImage.hidden = false;
+			document.getElementById('zotero-context-save-to-zotero').image = captureIcon;
+			document.getElementById('zotero-context-save-to-zotero').hidden = false;
 			
 			Zotero_Browser.statusImage.addEventListener("load", function() {
 				document.getElementById("zotero-status-image-guidance").show();
 			}, false);
 		} else {
 			Zotero_Browser.statusImage.hidden = true;
+			document.getElementById('zotero-context-save-to-zotero').hidden = true;
 		}
 		
 		// set annotation bar status
